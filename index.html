@@ -43,16 +43,12 @@ body {
   height:100vh;
   font-size: 16pt;
 }
-.message {
-  position: relative;
-  z-index: 2;
-}
 
 
 /* Info button on top of messages */
 .overlay {
   position: relative;   /* make z-index work */
-  z-index: 1000;
+  z-index: 3000 !important;
 }
 
 /* Make sure popup/modal is above everything */
@@ -165,7 +161,7 @@ input{
   color: #d80606;
 }
 .popup .content {
-  max-height: 30%;
+  max-height: 100%;
   overflow: scroll;
 
 }
@@ -176,6 +172,8 @@ input{
   }
   .popup{
     width: 70%;
+    height: 50%;
+    overflow: scroll;
   }
 }
 .dropbtn {
@@ -206,6 +204,7 @@ input{
   width: 40vw;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  overflow-y: scroll;
 }
 
 /* Links inside the dropdown */
@@ -325,12 +324,16 @@ input, textarea, button, select {
       • create unlimited notes on profiles & label them. 
       <br>
       • create unlimited chatrooms 
-      <br>
+      <hr>
       • import & export password protected JSON files between devices.
+      <br>
+      • You can save JSON files to the cloud and share the files between devices/browsers. 
+      <br>
 		  <hr>
       • Add to home screen for iOS & Android
       <hr>
       • Warning! Will load as new application in new browsers. 
+      <br>
       • Please close and re-open app after img uploads.
     </div>
 	</div>
