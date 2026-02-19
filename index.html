@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>WeChat</title>
 <meta name="description" content="Note Taking for Traumagenic Systems (DID & OSDD)">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="keywords" content="TwiNote Note Taking, DID OSDD, Traumagenic System">
+<meta name="keywords" content="TwiNote Note Taking, DID OSDD, Traumagenic Systems">
 <style>
 :root {
   --bg:#1e1e1e;
@@ -26,21 +26,24 @@ body {
   font-family:Arial;
   display:flex;
   height:100vh;
-  font-size: 20pt;
+  font-size: 16pt;
+}
+h2 {
+  font-size: 16 !important;
 }
 button {
-  font-size: 18pt;
+  font-size: 16pt;
 }
 select {
-  font-size: 18pt;
+  font-size: 16pt;
 }
 
 input{
-  font-size: 20pt;
+  font-size: 16pt;
 }
 
 #sidebar {
-  width:250px;
+  width: 40vw;
   background:var(--panel);
   padding:10px;
   overflow-y:auto;
@@ -71,7 +74,7 @@ input{
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease-out;
-  font-size: 20pt;
+  font-size: 16pt;
 }
 .button:hover {
   background: black;
@@ -178,7 +181,7 @@ input{
 }
 
 .profile-card {
-  background:rgb(182, 131, 147);
+  background:rgb(38, 38, 38);
   padding:5px;
   margin-bottom:5px;
   border-radius:5px;
@@ -186,6 +189,7 @@ input{
   align-items:center;
   justify-content:space-between;
   cursor:pointer;
+  color: white;
 }
 
 .profile-left {
@@ -213,7 +217,7 @@ input, textarea, button, select {
 <div id="sidebar">
 <h1>💬 WeChat</h1>
 <hr>
-<h2>ℹ️ How to use this application</h2>
+<p>ℹ️ How to use this application</p>
 <div class="box">
 	<a class="button" href="#popup1">Info</a>
 </div>
@@ -237,14 +241,15 @@ input, textarea, button, select {
 	</div>
 </div>
 <hr>
-<h2>Profiles</h2>
+<label for="profiles">Profiles:</label>
 <div id="profiles"></div>
 <button onclick="addProfile()">+ Add Profile</button>
 
 <hr>
 
-<h2>Chatrooms</h2>
+<label for="roomSelect">Chat Rooms:</label>
 <select id="roomSelect" onchange="switchRoom()"></select>
+
 <button onclick="addRoom()">+ Add Room</button>
 <button onclick="deleteRoom()">Delete Room</button>
 
@@ -253,17 +258,18 @@ input, textarea, button, select {
 <button onclick="toggleTheme()">Toggle Theme</button>
 <button onclick="exportData()">Export</button>
 <hr>
-<h2 style="text-align:center;">Import</h2>
-<input type="file" onchange="importData(event)">
+<label for="import-data">Import</label>
+<input type="file" id="import-data" onchange="importData(event)">
 <hr>
 <br>
 </div>
 
 <div id="main">
 <div id="messages"></div>
-
+<label for="chatInput">Send a Message:</label><br>
 <div style="display:flex;">
 <input id="chatInput" placeholder="Message">
+
 <button onclick="sendMessage()">Send</button>
 </div>
 <div style="height: 10vh;"></div>
@@ -273,19 +279,20 @@ input, textarea, button, select {
 <div style="background:var(--panel);padding:20px;width:400px;max-height:90vh;overflow-y:auto;border-radius:10px;">
 <h2>Edit Profile</h2>
 
-<img id="modalAvatarPreview" style="width:100px;height:100px;border-radius:50%;object-fit:cover;"><br>
+<img id="modalAvatarPreview" style="width:100px;height:100px;border-radius:50%;object-fit:cover;" alt="Image of Alter"><br>
+<label for="modalAvatarUpload">Image Upload</label>
 <input type="file" id="modalAvatarUpload">
 
-<label>Name</label>
+<label for="modalName">Name</label>
 <input id="modalName">
 
-<label>Bio</label>
+<label for="modalBio">Bio</label>
 <textarea id="modalBio"></textarea>
 
-<label>Trigger Notes</label>
+<label for="modalTriggers">Trigger Notes</label>
 <textarea id="modalTriggers"></textarea>
 
-<h2>Labeled Notes</h2>
+<label for="modalNotes">Notes:</label>
 <div id="modalNotes"></div>
 <button onclick="addNoteField()">+ Add Note</button>
 
