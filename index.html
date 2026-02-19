@@ -60,6 +60,10 @@ body {
   position: fixed;   /* or absolute if you're using that */
   z-index: 1000;
 }
+.instruct {
+  background-color: black;
+  padding: 10px;
+}
 .message {
   position: relative;
   z-index: 2;
@@ -82,7 +86,7 @@ input{
   width: 40vw;
   background:var(--panel);
   padding:10px;
-  overflow-y:auto;
+  overflow-y:scroll;
 }
 
 .textpopcolor {
@@ -162,7 +166,8 @@ input{
 }
 .popup .content {
   max-height: 30%;
-  overflow: auto;
+  overflow: scroll;
+
 }
 
 @media screen and (max-width: 700px){
@@ -231,7 +236,8 @@ input{
 .message {
   display:flex;
   align-items:flex-start;
-  margin-bottom:10vh;
+  margin-bottom:10px;
+  overflow: scroll;
 }
 
 .message img {
@@ -256,6 +262,11 @@ input{
   top:5px;
   cursor:pointer;
   font-size:12px;
+}
+.msg {
+  position: relative; 
+  bottom: 20%;
+  z-index: 1000;
 }
 
 .profile-card {
@@ -353,10 +364,15 @@ input, textarea, button, select {
 </div>
 
 <div id="main">
-<div id="messages"></div>
-<label for="chatInput">Send a Message:</label><br>
-<div style="display:flex;">
+  <div id="messages"></div>
+<div class="msg">
+  <div class="instruct">
+  <label for="chatInput">Choose a Profile, <br> Then Type Messages here:<br></label>
+</div>
+  <div style="display:flex;">
+  
 <input id="chatInput" placeholder="Message">
+</div>
 
 <button onclick="sendMessage()">Send</button>
 </div>
